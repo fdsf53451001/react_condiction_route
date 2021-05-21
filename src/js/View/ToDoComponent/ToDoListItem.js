@@ -19,8 +19,12 @@ class ToDoListItem extends React.Component{
     renderItemProvider(){
       console.log('update');
       let MsgArray = [];
-      this.props.getMessageItem().forEach(function(item, index, array) {
-        MsgArray.push((<ToDoListChildItem useText={item}/>));
+      this.props.getMessageItem().forEach((item, index, array) => {
+        MsgArray.push((<ToDoListChildItem 
+                          useText={item}                         
+                          onDeleteButtonClick={this.props.onDeleteButtonClick}
+                        />
+        ));
       });
       return MsgArray;
     }

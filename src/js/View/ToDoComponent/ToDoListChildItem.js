@@ -7,6 +7,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import DoneIcon from '@material-ui/icons/Done';
 import WarningIcon from '@material-ui/icons/Warning';
+import { ListItemSecondaryAction, IconButton  } from '@material-ui/core';
+import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 
 const useStyles = (theme) => ({
 
@@ -43,6 +45,15 @@ class ToDoListChildItem extends React.Component{
               {this.setIcon()}
             </ListItemIcon>
             <ListItemText primary={this.props.useText}/>
+            <ListItemSecondaryAction>
+              <IconButton onClick={
+                  // by using a function catch button signal
+                  // we can pass other data in the component by specify function
+                  (e)=>{this.props.onDeleteButtonClick(e,this.props.useText)}
+                  }>
+                <DeleteOutlineIcon/>
+              </IconButton>
+            </ListItemSecondaryAction>
           </ListItem>
         );
     }

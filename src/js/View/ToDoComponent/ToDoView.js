@@ -24,7 +24,10 @@ class ToDoView extends React.Component{
                 onAddButtonClick={this.props.onAddButtonClick} 
                 onAddTextChange = {this.props.onAddTextChange}
               />,
-              <ToDoListItem getMessageItem={this.props.getMessageItem}/>
+              <ToDoListItem 
+                getMessageItem={this.props.getMessageItem}
+                onDeleteButtonClick={this.props.onDeleteButtonClick}
+              />
             ]
         );
     }
